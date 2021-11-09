@@ -11,7 +11,7 @@ const app = Vue.createApp({
 	},
 	methods: {
 		getTodo(){
-			fetch("http://127.0.0.1:8000/retrieve-and-create-todos")
+			fetch("http://127.0.0.1:8000/api/retrieve-and-create-todos")
 				.then(res => res.json())
 				.then(data => this.todos = data["data"])
 				.catch(err => console.log(err.message))
@@ -21,7 +21,7 @@ const app = Vue.createApp({
 				"Content-Type": "application/json",
 				"Accept": "application/json",
 			};
-			fetch("http://127.0.0.1:8000/retrieve-and-create-todos", {
+			fetch("http://127.0.0.1:8000/api/retrieve-and-create-todos", {
 				    method: "POST",
 				    headers,
 				    body: JSON.stringify(body),
@@ -45,7 +45,7 @@ const app = Vue.createApp({
 			}
 		},
 		deleteTodo(todo_id){
-			fetch("http://127.0.0.1:8000/delete-todo/"+todo_id, {
+			fetch("http://127.0.0.1:8000/api/delete-todo/"+todo_id, {
 				    method: "DELETE",
 				})
 				.then(response => response.json())

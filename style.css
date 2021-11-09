@@ -8,3 +8,6 @@
 .todo-done{
     text-decoration: line-through;
 }
+.input-group-text{
+    height: 100%;
+}
